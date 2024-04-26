@@ -12,7 +12,8 @@ public class RandomAudioStart : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-        audioSource.PlayDelayed(Random.Range(0, audioSource.clip.length));
+        audioSource.time = Random.Range(0f, audioSource.clip.length);
+        audioSource.Play();
     }
 
     // Update is called once per frame
